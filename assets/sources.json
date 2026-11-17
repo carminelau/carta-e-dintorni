@@ -1,0 +1,76 @@
+{
+  "type": "stock_atmosphere_not_actual_shop",
+  "assets": {
+    "writing.jpg": "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1600&q=85",
+    "office.jpg": "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1000&q=85",
+    "books.jpg": "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=1000&q=85",
+    "paper.jpg": "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=1000&q=85",
+    "colours.jpg": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=1100&q=85",
+    "desk.jpg": "https://images.unsplash.com/photo-1456735190827-d1262f71b8a3?auto=format&fit=crop&w=1100&q=85",
+    "pens.jpg": "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?auto=format&fit=crop&w=1000&q=85",
+    "pencils.jpg": "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?auto=format&fit=crop&w=1100&q=85"
+  },
+  "fonts": {
+    "manrope": {
+      "family": "Manrope",
+      "provider": "Google Fonts",
+      "license": "SIL Open Font License",
+      "license_file": "manrope-OFL.txt"
+    },
+    "literata": {
+      "family": "Literata",
+      "provider": "Google Fonts",
+      "license": "SIL Open Font License",
+      "license_file": "literata-OFL.txt"
+    }
+  },
+  "brand": {
+    "file": "logo-carta-e-dintorni-originale.jpg",
+    "source_url": "https://www.edizionipolis.it/img/st/5.jpg",
+    "source_page": "https://www.edizionipolis.it/index.php?controller=stores&id_lang=1",
+    "verification": "Red and green pen mascots, black handwritten brand and blue category text match the shop logo visible on the price card in the July 2024 Google Maps photograph published by Francesco Laudato.",
+    "google_maps_url": "https://www.google.com/maps/place/Carta+e+dintorni+di+Francesco+Laudato/@40.7494438,14.6827513,17z/data=!3m1!4b1!4m6!3m5!1s0x133bc7386d77ce11:0x25fc93810d57c2b9!8m2!3d40.7494438!4d14.6827513!16s%2Fg%2F1v560qtq?hl=it",
+    "google_photo_url": "https://lh3.googleusercontent.com/grass-cs/AABkmLf3Dpz6S_eWYh0YBuqAm5X94w9YiY8fLNJ_EdRrcnLLhbJ6aEuu_ANemjj_llw4YxzJApIEOE8gtbAIFxfowH7iLrghQXQGUA5jMnyVl7fgb3NXuG6dyeXoh6Ajq5iMIS0DsD8=w1200-h1600-k-no",
+    "native_size": [
+      341,
+      341
+    ],
+    "display_crop": [
+      0,
+      0,
+      341,
+      225
+    ],
+    "unchanged_original": true,
+    "note": "Original archived anniversary artwork. CSS viewport excludes the 1995-2015 anniversary area; artwork and lettering are not regenerated. Current original vector not yet available.",
+    "sha256": "9c879575b550bfae9abdc7180a66d0a3d497a31e75f6c424c19e62d48685b853",
+    "current_web_asset": "logo-trasparente.webp",
+    "source_original_note": "Original historical JPEG kept as source; embedded provenance comment does not change compressed image pixels."
+  },
+  "generated_assets": {
+    "hero-stationery.webp": {
+      "type": "generated_illustrative_atmosphere",
+      "source_master": "site/source-assets/hero-stationery.png",
+      "prompt_sidecar": "hero-stationery.webp.json",
+      "tool": "imagegen",
+      "note": "Not real store inventory or premises."
+    },
+    "logo-trasparente.webp": {
+      "type": "background_removed_and_restored_brand_derivative",
+      "source_reference": "logo-carta-e-dintorni-originale.jpg",
+      "source_master": "site/source-assets/logo-trasparente.png",
+      "prompt_sidecar": "logo-trasparente.webp.json",
+      "tool": "imagegen",
+      "transparent": true,
+      "anniversary_removed": true,
+      "note": "Faithful cleanup derived from historical raster, not pixel-identical to original. Requested by user."
+    }
+  },
+  "icons": {
+    "whatsapp.svg": {
+      "source": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/whatsapp.svg",
+      "provider": "Simple Icons",
+      "usage": "WhatsApp contact link"
+    }
+  }
+}
