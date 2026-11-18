@@ -59,19 +59,36 @@
   document.addEventListener('click',event=>{if(!event.target.closest('.header-inner'))closeMenu();});
   matchMedia('(min-width: 1101px)').addEventListener('change',event=>{if(event.matches)closeMenu();});
 
-  let filter='all';
+  const catalogParams = new URLSearchParams(location.search);
+  let filter = all('[data-filter]').some(button=>button.dataset.filter===catalogParams.get('categoria')) ? catalogParams.get('categoria') : 'all';
+  const brandSelect = one('[data-brand-filter]');
+  if(brandSelect && [...brandSelect.options].some(option=>option.value===catalogParams.get('marca'))) brandSelect.value=catalogParams.get('marca');
+  if(one('[data-catalog-search]')) one('[data-catalog-search]').value=(catalogParams.get('q')||'').slice(0,160);
+  const normalizeSearch = value => String(value).toLocaleLowerCase('it').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[’']/g,' ');
   function filterCatalog(){
-    const search=one('[data-catalog-search]')?.value.trim().toLocaleLowerCase('it') || '';
+    const search=normalizeSearch(one('[data-catalog-search]')?.value.trim() || '');
+    const words=search.split(/\s+/).filter(Boolean);
+    const brand=brandSelect?.value || 'all';
     let visible=0;
-    all('[data-catalog-card]').forEach(card=>{const show=(filter==='all'||card.dataset.category===filter)&&card.dataset.search.toLocaleLowerCase('it').includes(search);card.hidden=!show;if(show)visible++;});
+    all('[data-catalog-card]').forEach(card=>{const show=(filter==='all'||card.dataset.category===filter)&&(brand==='all'||card.dataset.brand===brand)&&words.every(word=>normalizeSearch(card.dataset.search).includes(word));card.hidden=!show;if(show)visible++;});
     const counter=one('[data-catalog-count]');
-    if(counter)counter.textContent=`${visible} ${visible===1?'categoria da esplorare':'categorie da esplorare'}`;
+    if(counter)counter.textContent=`${visible} ${visible===1?'articolo o tipologia':'articoli e tipologie'}`;
     const empty=one('[data-catalog-empty]');if(empty)empty.hidden=visible>0;
+    all('[data-filter]').forEach(button=>{const active=button.dataset.filter===filter;button.classList.toggle('active',active);button.setAttribute('aria-pressed',String(active));});
+    all('.catalog-results [data-clear-filters]').forEach(button=>button.hidden=filter==='all'&&brand==='all'&&!search);
+    if(counter){
+      const url=new URL(location.href);
+      for(const [key,value] of [['categoria',filter==='all'?'':filter],['marca',brand==='all'?'':brand],['q',one('[data-catalog-search]')?.value.trim()||'']]){if(value)url.searchParams.set(key,value);else url.searchParams.delete(key);}
+      try{history.replaceState(null,'',url);}catch{/* I filtri funzionano anche senza accesso alla cronologia. */}
+    }
   }
   all('[data-filter]').forEach(button=>button.addEventListener('click',()=>{filter=button.dataset.filter;all('[data-filter]').forEach(item=>{const active=item===button;item.classList.toggle('active',active);item.setAttribute('aria-pressed',String(active));});filterCatalog();}));
   one('[data-catalog-search]')?.addEventListener('input',filterCatalog);
-  one('[data-clear-filters]')?.addEventListener('click',()=>{filter='all';one('[data-catalog-search]').value='';all('[data-filter]').forEach(button=>{const active=button.dataset.filter==='all';button.classList.toggle('active',active);button.setAttribute('aria-pressed',String(active));});filterCatalog();});
-  all('[data-add]').forEach(button=>button.addEventListener('click',()=>{const title=button.closest('article').querySelector('h3').textContent;if(addItem({id:button.dataset.add,title,quantity:1,notes:''})){button.innerHTML=`Nella tua lista ${icon('check')}`;notify(`${title}: aggiunto alla tua lista.${storageAvailable?'':' Salvataggio non disponibile: scaricala prima di chiudere.'}`);}}));
+  brandSelect?.addEventListener('change',filterCatalog);
+  all('[data-clear-filters]').forEach(button=>button.addEventListener('click',()=>{filter='all';one('[data-catalog-search]').value='';if(brandSelect)brandSelect.value='all';filterCatalog();one('[data-catalog-search]').focus();}));
+  all('[data-product-option]').forEach(select=>select.addEventListener('change',()=>{select.closest('article').querySelector('[data-add]').innerHTML=`Aggiungi alla lista ${icon('plus')}`;}));
+  all('[data-add]').forEach(button=>button.addEventListener('click',()=>{const article=button.closest('article');const title=button.dataset.addTitle||article.querySelector('h3').textContent;const option=article.querySelector('[data-product-option]')?.value||'';const id=button.dataset.add+(option?`:${option}`:'');if(addItem({id,title,quantity:1,notes:option?`Preferenza: ${option}`:''})){button.innerHTML=`Aggiungi ancora ${icon('check')}`;notify(`${title}${option?' · '+option:''}: aggiunto alla tua lista.${storageAvailable?'':' Salvataggio non disponibile: scaricala prima di chiudere.'}`);}}));
+  filterCatalog();
   const presets={scrivania:['Penne e matite','Blocchi per appunti','Note adesive','Fermagli e accessori'],archivio:['Raccoglitori','Cartelline','Separatori','Etichette'],riunione:['Blocchi per appunti','Penne','Evidenziatori','Cartelline portadocumenti']};
   all('[data-preset]').forEach(button=>button.addEventListener('click',()=>{const items=presets[button.dataset.preset];if(!items)return;let added=0;items.forEach(title=>{if(addItem({id:`preset-${title.toLowerCase().replaceAll(' ','-')}`,title,quantity:1,notes:''}))added++;});notify(`${added} voci aggiunte. Puoi modificarle nella tua lista.`);}));
   one('[data-school-form]')?.addEventListener('submit',event=>{event.preventDefault();const data=new FormData(event.currentTarget);const school=String(data.get('school')||'').trim();const classroom=String(data.get('classroom')||'').trim();const message=String(data.get('message')||'').trim();if(!school||!classroom)return;const title=`Libri: ${school} — ${classroom}`;const notes=message.slice(0,350);if(addItem({id:`school-${school}-${classroom}`.toLowerCase().slice(0,200),title,quantity:1,notes})){one('[data-school-status]').textContent='Promemoria aggiunto alla tua lista. Non è stato inviato al negozio.';notify('Promemoria scolastico aggiunto alla lista.');}});

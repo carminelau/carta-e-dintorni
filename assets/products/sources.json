@@ -1,0 +1,98 @@
+[
+  {
+    "file": "bic-4-colours.jpg",
+    "origin": "https://res.cloudinary.com/bic-digital/image/upload/c_limit,w_700,q_85/strapi-v5/CL_Original_1_82b9d78bc0.jpg",
+    "source_page": "https://eu.bic.com/en-gb/stationery/the-bic-4-colours-collections",
+    "type": "manufacturer",
+    "retrieved": "2026-11-18",
+    "note": "Immagine di riferimento; non prova la disponibilità in negozio."
+  },
+  {
+    "file": "bic-cristal.jpg",
+    "origin": "https://mediabic.bic.com/image/upload/c_limit,w_800,q_85/strapi-v5/Anniversary_4_Bic_Cristal_pens_and_caps_0bc57fa36a.jpg",
+    "source_page": "https://eu.bic.com/en-gb/stationery/cristal-anniversary",
+    "type": "manufacturer",
+    "retrieved": "2026-11-18",
+    "note": "Immagine di riferimento; non prova la disponibilità in negozio."
+  },
+  {
+    "file": "bic-renew.jpg",
+    "origin": "https://res.cloudinary.com/bic-digital/image/upload/c_limit,w_800,q_85/v1620145985/BIC_cristal_renew_image_618_9e35664fc1.jpg",
+    "source_page": "https://eu.bic.com/en-gb/stationery/bic-cristal-renew",
+    "type": "manufacturer",
+    "retrieved": "2026-11-18",
+    "note": "Immagine di riferimento; non prova la disponibilità in negozio."
+  },
+  {
+    "file": "borse-ufficio.webp",
+    "type": "generated_illustrative_category_image",
+    "origin": "OpenAI image_gen, 2026-11-18",
+    "prompt": "Create a photorealistic studio product still life for an Italian family stationery shop website. Landscape 4:3 composition, one simple unbranded dark forest green fabric laptop briefcase with two short handles and a removable shoulder strap, a charcoal unbranded zip laptop sleeve leaning beside it, and a slim red closed daily planner partly in front. Full objects visible with generous clean space on all edges. Pale cool light gray studio surface and background, subtle natural soft shadows, daylight from upper left. Understated practical office supplies, realistic nylon textile stitching and metal zips. No text, no logos, no labels, no watermark. This is illustrative category imagery, not a depiction of a specific real product.",
+    "master": "site/source-assets/borse-ufficio.png",
+    "note": "Immagine illustrativa senza marchi. Non raffigura prodotti reali del negozio."
+  },
+  {
+    "file": "seven-astuccio.jpg",
+    "origin": "https://cdn.shopify.com/s/files/1/0609/9661/6406/files/300102692-899_1.jpg?v=1783410704&width=800",
+    "source_page": "https://www.seven.eu/products/astuccio-seven®-3-zip-glitzycute",
+    "type": "manufacturer",
+    "retrieved": "2026-11-18",
+    "note": "Immagine di riferimento; non prova la disponibilità in negozio."
+  },
+  {
+    "file": "seven-quaderni-quadretti.jpg",
+    "origin": "https://cdn.shopify.com/s/files/1/0609/9661/6406/products/qpm_e17_seven_dt_a4_01_1.jpg?v=1709215749&width=800",
+    "source_page": "https://www.seven.eu/products/10-squared-excercise-books-max-quantity-5m-31752",
+    "type": "manufacturer",
+    "retrieved": "2026-11-18",
+    "note": "Immagine di riferimento; non prova la disponibilità in negozio."
+  },
+  {
+    "file": "seven-quaderni-righe.jpg",
+    "origin": "https://cdn.shopify.com/s/files/1/0609/9661/6406/products/qpm_e17_seven_dt_a4_01.jpg?v=1709215641&width=800",
+    "source_page": "https://www.seven.eu/products/10-ruled-excercise-books-max-quantity-1r",
+    "type": "manufacturer",
+    "retrieved": "2026-11-18",
+    "note": "Immagine di riferimento; non prova la disponibilità in negozio."
+  },
+  {
+    "file": "seven-trolley.jpg",
+    "origin": "https://cdn.shopify.com/s/files/1/0609/9661/6406/files/200112604-534_1.jpg?v=1779870149&width=800",
+    "source_page": "https://www.seven.eu/products/trolley-comby-seven®-8-ruote-made-of-stars",
+    "type": "manufacturer",
+    "retrieved": "2026-11-18",
+    "note": "Immagine di riferimento; non prova la disponibilità in negozio."
+  },
+  {
+    "file": "seven-zaino.jpg",
+    "origin": "https://cdn.shopify.com/s/files/1/0609/9661/6406/products/200102324-428_1.jpg?v=1709238863&width=800",
+    "source_page": "https://www.seven.eu/products/seven-advanced-backpack-dye-on",
+    "type": "manufacturer",
+    "retrieved": "2026-11-18",
+    "note": "Immagine di riferimento; non prova la disponibilità in negozio."
+  },
+  {
+    "file": "staedtler-fineliner.jpg",
+    "origin": "https://e.staedtlercdn.com/images/wzVirnGYlNS9_aYJrdlbDZPFv1TTV95l8f5BrB_0ZK4/w:1200/h:181/fn:Y3NtXzMzNC0zX1JFWllLTEFUX1NUQU5EQVJEX09QRU5fT0ZGRU5fNTQzOWQwYTBkNA:t/cb:1e9c870acc02b26cbbaf61a893fc2cf39de2984e/el:1/fq:jpeg:85:avif:70:webp:80/aHR0cHM6Ly9lLnN0YWVkdGxlcmNkbi5jb20vcHJvZHVjdC1pbWFnZXMvZXBpbS8zMzQtM19SRVpZS0xBVF9TVEFOREFSRF9PUEVOX09GRkVOLmpwZWc_MTc4OTk4MDU1Nw",
+    "source_page": "https://www.staedtler.com/it/it/prodotti/colorare/punta-fine/triplus-fineliner-334-pennarello-a-punta-fine-triangolare-m334/",
+    "type": "manufacturer",
+    "retrieved": "2026-11-18",
+    "note": "Immagine di riferimento; non prova la disponibilità in negozio."
+  },
+  {
+    "file": "staedtler-stick.jpg",
+    "origin": "https://e.staedtlercdn.com/images/iVVgB-4W69vT6-ojIxbwU1-yD7dgQvVSwUrHTUpsRlA/w:1200/h:206/fn:Y3NtXzQzMF9NLTlfU1RBTkRBUkRfT1BFTl9PRkZFTl8xMGI0NTgwYTFm:t/cb:559f17492993bb5bd9240aedb483b087581b006d/el:1/fq:jpeg:85:avif:70:webp:80/aHR0cHM6Ly9lLnN0YWVkdGxlcmNkbi5jb20vcHJvZHVjdC1pbWFnZXMvZXBpbS80MzBfTS05X1NUQU5EQVJEX09QRU5fT0ZGRU4uanBlZz8xNzg5OTgwNzc4",
+    "source_page": "https://www.staedtler.com/it/it/prodotti/penne/penne-a-sfera/stick-430-penna-a-sfera-m430/",
+    "type": "manufacturer",
+    "retrieved": "2026-11-18",
+    "note": "Immagine di riferimento; non prova la disponibilità in negozio."
+  },
+  {
+    "file": "staedtler-triplus.jpg",
+    "origin": "https://e.staedtlercdn.com/images/pQZF-gIlL3ddnozAvT3vIt5sacusc150D-IU_v7QTto/w:1200/h:198/fn:Y3NtXzQzN00zMDAwMV9jNmU4ZTU0Mzhl:t/cb:fa170d32c947c3bb9ec83988a2339b7cc3898290/el:1/fq:jpeg:85:avif:70:webp:80/aHR0cHM6Ly9lLnN0YWVkdGxlcmNkbi5jb20vcHJvZHVjdC1pbWFnZXMvZXBpbS80MzdNMzAwMDEuanBlZz8xNzg5OTgwNzgx",
+    "source_page": "https://www.staedtler.com/it/it/prodotti/penne/penne-a-sfera/triplus-ball-437-penna-a-sfera-triangolare-m437/",
+    "type": "manufacturer",
+    "retrieved": "2026-11-18",
+    "note": "Immagine di riferimento; non prova la disponibilità in negozio."
+  }
+]
